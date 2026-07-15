@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бидний жижигхэн ертөнц ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading">
+    <div class="loading-heart">❤️</div>
+    <p>Чамд зориулсан ертөнц нээгдэж байна...</p>
+  </div>
+
+  <div class="stars" id="stars"></div>
+
+  <audio id="bgMusic" loop>
+    <source src="music/love.mp3" type="audio/mpeg">
+    <source src="music/love.wav" type="audio/wav">
+  </audio>
+
+  <header class="topbar">
+    <div class="brand">💗 Бидний түүх</div>
+    <nav>
+      <a href="#home" class="active">Нүүр</a>
+      <a href="#story">Түүх</a>
+      <a href="#gallery">Зураг</a>
+      <a href="#letter">Захидал</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow">💗 ЧАМД ЗОРИУЛАВ 💗</div>
+          <h1>Бидний<br><span>жижигхэн ертөнц</span> ❤️</h1>
+          <p>
+            Энэ сайтад бидний дурсамж, өнгөрүүлсэн хугацаа
+            болон чамд хэлэхийг хүссэн үгс минь бий.
+          </p>
+          <a href="#story" class="primary-btn">Бидний түүхийг үзэх <span>♥</span></a>
+        </div>
+
+        <div class="hero-visual">
+          <img src="assets/couple-hero.jpg" alt="Бидний дурсамж">
+        </div>
+
+        <button id="musicBtn" class="music-btn" onclick="toggleMusic()">🎵 Дуу зогсоох</button>
+      </div>
+    </section>
+
+    <section class="dashboard" id="story">
+      <article class="panel">
+        <h2>💗 Анх танилцсан өдөр</h2>
+        <div class="big-date">2025 оны 12-р сарын 4</div>
+        <p>Тэр өдрөөс хойш бидний түүх эхэлсэн. Хамт өнгөрүүлсэн мөч бүр миний хувьд үнэ цэнтэй дурсамж болсон.</p>
+        <div class="outline-heart">♡</div>
+      </article>
+
+      <article class="panel">
+        <h2>🗓 Бид хамтдаа</h2>
+        <div class="counter-row">
+          <div><strong id="days">224</strong><span>Өдөр</span></div>
+          <div><strong id="hours">12</strong><span>Цаг</span></div>
+          <div><strong id="minutes">45</strong><span>Минут</span></div>
+          <div><strong id="seconds">30</strong><span>Секунд</span></div>
+        </div>
+        <p class="soft">Дурсамж бүтээсээр... 💗</p>
+      </article>
+
+      <article class="panel gallery-panel" id="gallery">
+        <h2>📷 Бидний дурсамж</h2>
+        <div class="gallery-wrap">
+          <button onclick="prevImage()" class="arrow left">‹</button>
+          <img id="galleryImage" src="images/photo1.jpg" alt="Дурсамж">
+          <button onclick="nextImage()" class="arrow right">›</button>
+        </div>
+        <div class="dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <div id="photoCount">1 / 3</div>
+      </article>
+
+      <article class="panel letter-panel" id="letter">
+        <h2>💌 Нууц захидал</h2>
+        <p>Нууц кодыг оруулж захидлыг нээгээрэй.</p>
+        <div class="secret-row">
+          <input id="passwordInput" type="password" placeholder="•••">
+          <button onclick="openLetter()">Нээх</button>
+        </div>
+        <div id="passwordStatus" class="status"></div>
+        <button class="read-btn" onclick="openLetter()">Захидлыг унших 💗</button>
+      </article>
+    </section>
+
+    <section class="proposal">
+      <div class="proposal-copy">
+        <h2>💍 Надад нэг асуулт байна...</h2>
+        <p>Will you stay with me forever?</p>
+        <div class="proposal-buttons">
+          <button onclick="sayYes()">Тийм ♥</button>
+          <button id="noBtn" onmouseenter="moveNoButton()" onclick="moveNoButton()">Үгүй</button>
+        </div>
+        <div id="finalMessage"></div>
+      </div>
+      <div class="heart-burst">💗</div>
+    </section>
+
+    <section id="secretLetter" class="modal hidden">
+      <div class="modal-card">
+        <button class="close" onclick="closeLetter()">×</button>
+        <h2>💌 Хайрт минь 💌</h2>
+        <div class="letter-scroll">
+          <p>Хайрт минь,</p>
+          <p>Өнөөдөр бидний үерхээд <strong>224 хоног</strong> болжээ. Тоо бол зүгээр л тоо мэт санагдаж болох ч энэ 224 хоногийн өдөр бүр миний хувьд үнэ цэнтэй дурсамж болж үлдсэн.</p>
+          <p>Анх чамтай танилцсан тэр мөчөөс эхлээд миний амьдрал бага багаар өөрчлөгдөж эхэлсэн. Чамтай ярилцаж, хамт инээж, хамт алхаж өнгөрүүлсэн мөч бүхэн одоо бодоход өчигдөрхөн болсон юм шиг санагддаг.</p>
+          <p>Заримдаа бид ойлголцохгүй үе байсан. Маргалдсан ч үе бий. Гэхдээ тэр бүхний дараа би нэг л зүйлийг улам сайн ойлгосон. Тэр нь ямар ч үед чамайгаа алдахыг хүсдэггүй гэдэг үнэн байсан.</p>
+          <p>Чиний инээмсэглэл миний хамгийн дуртай зүйл. Чиний баяртай байхыг харах болгонд өөрийн эрхгүй инээмсэглэдэг.</p>
+          <p>Би төгс хүн биш. Заримдаа алдаа гаргаж, чамайг гомдоосон байх. Тэр бүхний төлөө уучлал хүсье. Гэхдээ нэг зүйл дээр би үргэлж үнэнч байсан. Тэр нь чамайг гэсэн миний хайр.</p>
+          <p>Амьдралд юу ч тохиолдож болно. Гэхдээ ямар ч нөхцөлд чиний гараас атгасан хэвээр үлдэхийг хүсдэг.</p>
+          <p>224 хоногийн турш надад хайр, халамж, аз жаргал бэлэглэсэнд баярлалаа.</p>
+          <p>Хэрэв цаг хугацааг буцааж болдог байсан ч би дахиад л чамайг сонгох байсан.</p>
+          <p>Би чамд өнөөдөр хайртай. Маргааш ч хайртай байна. Жилийн дараа ч хайртай байна. Харин насан туршдаа хайрлахыг хүсэж байна.</p>
+          <h3>Хайртай шүү, хайрт минь. ❤️</h3>
+          <h4>Forever yours.</h4>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Чамд зориулав ❤️</footer>
+  <script src="script.js"></script>
+</body>
+</html>
